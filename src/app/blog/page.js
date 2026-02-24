@@ -27,7 +27,7 @@ export default async function BlogIndexPage() {
             ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {posts.map((post) => (
-                        <Link key={post._id} href={`/blog/${post.slug.current}`} className="group block">
+                        <Link key={post._id} href={`/blog/${post.slug.current}/`} className="group block">
                             <article className="h-full flex flex-col bg-card rounded-2xl border overflow-hidden hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                                 {post.mainImage ? (
                                     <div className="relative w-full h-48 overflow-hidden bg-muted">

@@ -19,4 +19,5 @@ RewriteRule ^(.*)$ /$1.html [L]
 # Callback padrão do SPA
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !\.(txt|json|rsc)$
 RewriteRule ^.*$ /index.html [L]
