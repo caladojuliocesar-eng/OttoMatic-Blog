@@ -2,11 +2,21 @@ Options -MultiViews
 RewriteEngine On
 RewriteBase /
 
-# Se o arquivo contendo .html existir, redirecione para ele
-RewriteCond %{DOCUMENT_ROOT}/$1.html -f
-RewriteRule ^(.+?)/?$ /$1.html [L]
+# Remove trailing slashes
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ /$1 [L,R=301]
 
-# Caso padrão para SPA (evita 404)
+# Se a requisição não for para um arquivo / pasta que exista
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.+?)/?$ /index.html [L]
+
+# E se a versão '.html' daquela requisição existir
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+
+# Sirva o arquivo .html internamente (sem mudar a URL no navegador)
+RewriteRule ^(.*)$ /$1.html [L]
+
+# Callback padrão do SPA
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^.*$ /index.html [L]
