@@ -38,3 +38,8 @@ jobs:
           server-dir: ./public_html/
           local-dir: ./out/
           dangerous-clean-slate: true
+          exclude: |
+            **/.htaccess
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
