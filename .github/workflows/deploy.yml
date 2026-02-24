@@ -37,9 +37,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: ./
           local-dir: ./out/
-          dangerous-clean-slate: true
-          exclude: |
-            **/.htaccess
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
+          dangerous-clean-slate: false
