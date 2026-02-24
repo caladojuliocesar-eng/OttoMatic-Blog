@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ottomatic.com.br/sitemap.xml
