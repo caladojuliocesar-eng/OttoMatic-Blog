@@ -44,6 +44,9 @@ const Header = () => {
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
+          <Link href="/blog" className={`text-sm font-medium transition-colors hover:text-cyan-400 ${pathname === '/blog' ? 'text-cyan-400' : 'text-slate-300'}`}>
+            Blog
+          </Link>
           <Link href="/solutions" className={`text-sm font-medium transition-colors hover:text-cyan-400 ${pathname === '/solutions' ? 'text-cyan-400' : 'text-slate-300'}`}>
             Soluções
           </Link>
@@ -72,6 +75,9 @@ const Header = () => {
         opacity: 0,
         y: -20
       }} className="md:hidden mt-4 pb-4 space-y-4">
+        <Link href="/blog" className="block w-full text-center py-2 text-slate-300 hover:text-cyan-400 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
+          Blog
+        </Link>
         <Link href="/solutions" className="block w-full text-center py-2 text-slate-300 hover:text-cyan-400 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
           Soluções
         </Link>
